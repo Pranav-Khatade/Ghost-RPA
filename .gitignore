@@ -1,0 +1,35 @@
+Virtual Environment
+
+venv/
+.venv/
+env/
+ENV/
+
+Python Cache & Artifacts
+
+pycache/
+*.py[cod]
+*$py.class
+*.so
+
+Environment & Credentials
+
+.env
+.env.local
+
+GhostRPA Data & Screenshots
+
+data/screenshots/*
+!data/screenshots/.gitkeep
+
+IDE / Editor Settings
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+OS Generated Files
+
+.DS_Store
+Thumbs.db
