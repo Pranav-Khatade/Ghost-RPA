@@ -1,6 +1,4 @@
-from pathlib import Path
-
-readme = r'''<div align="center">
+<div align="center">
 
 # GhostRPA Studio
 
@@ -16,16 +14,32 @@ Describe a browser task in natural language. GhostRPA uses a local vision model 
   <a href="https://ollama.com/"><img src="https://img.shields.io/badge/Inference-Ollama-black?style=for-the-badge" alt="Ollama"></a>
 </p>
 
-<p>
-  <a href="#-overview">Overview</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-how-it-works">How It Works</a> •
-  <a href="#-configuration">Configuration</a> •
-  <a href="#-safety-and-limitations">Safety</a>
-</p>
-
 </div>
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Why GhostRPA?](#why-ghostrpa)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Architecture](#architecture)
+- [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repository](#1-clone-the-repository)
+  - [Create a Virtual Environment](#2-create-a-virtual-environment)
+  - [Install Dependencies](#3-install-dependencies)
+  - [Set Up Ollama](#4-set-up-ollama)
+  - [Launch the Dashboard](#5-launch-the-dashboard)
+- [Using GhostRPA](#using-ghostrpa)
+- [Configuration](#configuration)
+- [Repository Structure](#repository-structure)
+- [Troubleshooting](#troubleshooting)
+- [Safety, Privacy, and Limitations](#safety-privacy-and-limitations)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Issues and Support](#issues-and-support)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -58,7 +72,7 @@ Traditional browser automation often relies on selectors tied to the page's DOM 
 
 The local-first design also aims to keep page screenshots and model inference on the user's machine when a local Ollama model is used. Actual privacy depends on the configured model, application behavior, and any external sites or services the user interacts with.
 
-## ✨ Features
+## Features
 
 | Feature | Description | Why it matters |
 |---|---|---|
@@ -74,7 +88,7 @@ The local-first design also aims to keep page screenshots and model inference on
 
 > **Important:** Visual automation is probabilistic. A model can misidentify controls, select the wrong coordinates, or misunderstand the page. Review automation runs and use safe test environments before relying on the agent for important workflows.
 
-## 🧰 Technology stack
+## Technology stack
 
 | Technology | Role |
 |---|---|
@@ -88,7 +102,7 @@ The local-first design also aims to keep page screenshots and model inference on
 | Pillow | Image processing and debug-frame handling |
 | Requests / HTTPX | HTTP communication, where used by the application |
 
-## 🏗️ Architecture
+## Architecture
 
 At a high level, GhostRPA follows this flow:
 
@@ -144,7 +158,7 @@ This is a conceptual overview of the intended execution flow, not a guarantee th
 
 The codebase may evolve. Check the repository for the latest source files and their current responsibilities.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -229,7 +243,7 @@ Open:
 
 The command above binds the dashboard to the local machine. If you intentionally need access from another device on a trusted network, review the security implications before changing the host to `0.0.0.0`.
 
-## 🖥️ Using GhostRPA
+## Using GhostRPA
 
 1. Start Ollama and confirm the selected vision model is available.
 2. Start the FastAPI application.
@@ -262,7 +276,7 @@ This is an illustrative example, not a claim of a verified successful run. The e
 
 Keep instructions specific. For consequential actions—such as purchases, sending messages, deleting data, changing account settings, or submitting forms—require human review and confirmation.
 
-## ⚙️ Configuration
+## Configuration
 
 GhostRPA depends on the local model and the settings implemented in the repository.
 
@@ -277,7 +291,7 @@ GhostRPA depends on the local model and the settings implemented in the reposito
 
 Use the repository's source code as the authority for exact configuration names. No environment-variable names are documented here unless confirmed in the current source.
 
-## 📁 Repository structure
+## Repository structure
 
 The repository includes the following top-level files and components:
 
@@ -296,7 +310,7 @@ Ghost-RPA/
 
 This is a simplified view. Hidden files and additional runtime directories may exist locally or be excluded from version control.
 
-## 🧪 Troubleshooting
+## Troubleshooting
 
 | Problem | What to check |
 |---|---|
@@ -312,7 +326,7 @@ This is a simplified view. Hidden files and additional runtime directories may e
 
 If a problem persists, open a GitHub issue with the operating system, Python version, reproducible steps, and relevant sanitized logs. Never include credentials, session cookies, API keys, or private page screenshots.
 
-## 🔐 Safety, privacy, and limitations
+## Safety, privacy, and limitations
 
 GhostRPA is designed around local vision inference, but **local-first does not mean risk-free**.
 
@@ -327,7 +341,7 @@ GhostRPA is designed around local vision inference, but **local-first does not m
 
 GhostRPA is an experimental developer project and should not be treated as a fully secure, production-hardened automation platform without further validation.
 
-## 🗺️ Roadmap
+## Roadmap
 
 Potential improvements to consider:
 
@@ -342,7 +356,7 @@ Potential improvements to consider:
 
 These are suggested future improvements, not claims that the features are already implemented.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions and practical feedback are welcome.
 
@@ -357,7 +371,7 @@ Contributions and practical feedback are welcome.
 
 For bug reports, include your environment, steps to reproduce, expected behavior, actual behavior, and sanitized logs.
 
-## 🐛 Issues and support
+## Issues and support
 
 | Resource | Link |
 |---|---|
@@ -367,11 +381,11 @@ For bug reports, include your environment, steps to reproduce, expected behavior
 | Local model runtime | [Ollama](https://ollama.com/) |
 | API framework | [FastAPI](https://fastapi.tiangolo.com/) |
 
-## 📜 License
+## License
 
 GhostRPA is distributed under the MIT License. See [`LICENSE`](./LICENSE) for the full license text.
 
-## 👤 Author
+## Author
 
 **Pranav Khatade**
 
@@ -384,11 +398,6 @@ GhostRPA is distributed under the MIT License. See [`LICENSE`](./LICENSE) for th
 
 **Making browser automation more visual, adaptable, and locally controlled.**
 
-If GhostRPA is useful to you, consider giving the repository a ⭐.
+If GhostRPA is useful to you, consider starring the repository.
 
 </div>
-'''
-
-path = Path("/mnt/data/README_Ghost_RPA.md")
-path.write_text(readme, encoding="utf-8")
-print(f"Created {path} — {len(readme.splitlines())} lines, {path.stat().st_size:,} bytes")
